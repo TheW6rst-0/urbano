@@ -1,0 +1,451 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+nav .logo h1 {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Contenedor para Menú y Login */
+nav .nav-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Alinea todo a la derecha */
+    gap: 20px; /* Espaciado entre "Menú" y "Log In" */
+    flex-grow: 1; /* Ocupa el espacio restante en el contenedor */
+}
+
+nav .nav-main {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav .nav-main li {
+    margin: 0;
+}
+
+nav .nav-main .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+nav .nav-main .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+nav .nav-main .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+nav .nav-main .dropdown-content a {
+    padding: 12px 16px;
+    text-align: left;
+}
+
+nav .nav-main a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+/* Botón de Login */
+nav .nav-login {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+nav .login {
+    background-color: #4CAF50;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+}
+
+nav .login:hover {
+    background-color: #45a049;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: url('../images/lobby.jpg') no-repeat center center/cover;
+    color: #fff;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.hero .btn-primary {
+    background: #f4b400;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.hero .btn-primary:hover {
+    background: #e0a800;
+}
+
+/* Sección de habitaciones */
+#habitaciones {
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.habitaciones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.habitacion-card {
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.habitacion-card img {
+    width: 100%;
+    height: 200px; /* Ajusta la altura según tus necesidades */
+    object-fit: cover; /* Asegura que la imagen llene el espacio sin distorsión */
+    object-position: center; /* Centra la imagen */
+}
+
+.habitacion-card h3 {
+    margin: 1rem;
+}
+
+.habitacion-card p {
+    margin: 0 1rem 1rem;
+}
+
+.habitacion-card .btn-secondary {
+    display: block;
+    background: #333;
+    color: #fff;
+    padding: 0.5rem;
+    text-align: center;
+    text-decoration: none;
+    margin: 0 1rem 1rem;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.habitacion-card .btn-secondary:hover {
+    background: #555;
+}
+
+#servicios {
+    text-align: center;
+    background-color: #f8f8f8;
+    padding: 40px 20px;
+}
+
+#servicios h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#servicios p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+/* Carrusel */
+.carrusel {
+    position: relative;
+    width: 80%;
+    margin: 0 auto 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carrusel .slide {
+    display: none; /* Oculta todas las diapositivas */
+    text-align: center;
+}
+
+.carrusel .slide img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.carrusel .slide.active {
+    display: block; /* Muestra solo la diapositiva activa */
+}
+
+.carrusel button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 1.5em;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.carrusel button.prev {
+    left: 10px;
+}
+
+.carrusel button.next {
+    right: 10px;
+}
+
+
+/* Botón de Descubre Nuestras Habitaciones */
+.btn-descubre {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1.2em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-descubre:hover {
+    background-color: #45a049;
+}
+
+#contactanos {
+    background-color: #f5f5f5;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#contactanos h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contacto-contenido {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Alinea verticalmente ambos contenedores */
+    gap: 40px; /* Espaciado entre columnas */
+    margin-top: 20px;
+    flex-wrap: wrap; /* Permite ajuste en pantallas pequeñas */
+    min-height: 150px; /* Asegura un espacio uniforme para ambos lados */
+}
+
+.direccion, .datos-contacto {
+    flex: 1; /* Ocupan el mismo espacio */
+    max-width: 300px; /* Ancho máximo para las columnas */
+    text-align: left;
+    margin: 0; /* Elimina posibles márgenes que causen desalineación */
+    padding: 0;
+}
+
+.direccion h3, .datos-contacto h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.direccion p, .datos-contacto p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #666;
+    margin: 5px 0; /* Añade un espaciado uniforme entre párrafos */
+}
+
+@media (max-width: 768px) {
+    .contacto-contenido {
+        flex-direction: column; /* Apila las columnas en pantallas pequeñas */
+        text-align: center; /* Centra todo */
+    }
+    .direccion, .datos-contacto {
+        text-align: center; /* Centra los textos */
+    }
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #333;
+    color: #fff;
+}
+
+/* Estilos generales del popup */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro con transparencia */
+    display: none; /* Ocultar por defecto */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegura que el popup esté encima de otros elementos */
+}
+
+.popup-content {
+    background: #fff;
+    padding: 20px 40px;
+    border-radius: 10px;
+    text-align: center;
+    width: 90%; /* Ancho máximo del popup */
+    max-width: 400px; /* Limitar el ancho en pantallas grandes */
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para darle un efecto elevado */
+}
+
+/* Título del popup */
+.popup-content h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Formularios dentro del popup */
+.popup-content form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-align: left;
+    color: #555;
+}
+
+.popup-content form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.popup-content form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.popup-content form button:hover {
+    background-color: #45a049;
+}
+
+/* Texto y enlaces dentro del popup */
+.popup-content p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+.popup-content p a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.popup-content p a:hover {
+    text-decoration: underline;
+}
+
+/* Botón de cierre */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #555;
+}
+
+/* Responsivo: Ajusta el tamaño del popup en pantallas pequeñas */
+@media (max-width: 768px) {
+    .popup-content {
+        padding: 15px 20px;
+        width: 100%;
+        max-width: 90%; /* Ocupa casi todo el ancho disponible */
+    }
+
+    .popup-content h2 {
+        font-size: 20px;
+    }
+
+    .popup-content form input {
+        font-size: 14px;
+    }
+
+    .popup-content form button {
+        font-size: 14px;
+    }
+}

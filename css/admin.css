@@ -1,0 +1,94 @@
+/* Estilo básico para el panel de administración */
+
+/* Estilo para el panel de administración */
+#admin-panel {
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#admin-options {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.option-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 48%;
+    margin-bottom: 20px;
+}
+
+.option-card h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.option-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.option-card input, .option-card textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.option-card button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.option-card button:hover {
+    background-color: #45a049;
+}
+
+#habitaciones-listadas {
+    margin-top: 50px;
+}
+
+#habitaciones-categorias {
+    display: flex;
+    justify-content: space-around;
+}
+
+.categoria {
+    width: 30%;
+}
+
+.categoria h4 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.categoria ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.categoria li {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}

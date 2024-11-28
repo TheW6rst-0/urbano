@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habitación Doble Deluxe</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/habitacion-detalles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Hotel Mérida INN</h1>
+            </div>
+            <div class="nav-right">
+                <ul class="nav-main">
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Menú</a>
+                        <ul class="dropdown-content">
+                            <li><a href="index.php">Inicio</a></li>
+                            <li><a href="habitaciones.php">Habitaciones</a></li>
+                            <li><a href="carrito.php">Carrito</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav-login">
+                    <li><a href="login.html" class="login">Log In</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="habitacion-detalle">
+            <h1 class="titulo-habitacion">Habitación Doble Deluxe</h1>
+        
+            <div class="habitacion-contenido">
+                <!-- Carrusel de Imágenes -->
+                <div class="carrusel">
+                    <div class="carousel-container">
+                        <div class="slide">
+                            <img src="images/habitaciones/dDeluxe1.jpg" alt="Habitación Doble Deluxe">
+                        </div>
+                        <div class="slide">
+                            <img src="images/habitaciones/dDeluxe2.jpg" alt="Habitación Doble Deluxe">
+                        </div>
+                        <div class="slide">
+                            <img src="images/habitaciones/dDeluxe3.jpg" alt="Habitación Doble Deluxe">
+                        </div>
+                    </div>
+                    <button class="carousel-button prev">&#10094;</button>
+                    <button class="carousel-button next">&#10095;</button>
+                </div>
+        
+                <!-- Información de la habitación -->
+                <div class="habitacion-info">
+                    <h2 class="precio">$4000 por noche</h2>
+                    <form action="carritoback.php" method="POST">
+                        <input type="hidden" name="accion" value="agregar">
+                        <input type="hidden" name="id_habitacion" value="1"> <!-- Cambia por el ID de la habitación -->
+                        <button type="submit" class="btn-reservar">Reservar</button>
+                    </form>
+                    <div class="comodidades">
+                        <h3>Comodidades:</h3>
+                        <ul>
+                            <li>2 camas doble</li>
+                            <li>2 pisos</li>
+                            <li>Sala de estar</li>
+                            <li>Baño con jacuzzi</li>
+                            <li>Escritorio</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </main>
+    
+
+    <footer>
+        <p>&copy; 2024 Hotel Mérida INN. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Pop-up de Log In -->
+    <div id="loginPopup" class="popup-overlay">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup('loginPopup')">&times;</span>
+            <h2>Iniciar Sesión</h2>
+            <form>
+                <label for="loginEmail">Correo:</label>
+                <input type="email" id="loginEmail" placeholder="Ingresa tu correo" required>
+                <label for="loginPassword">Contraseña:</label>
+                <input type="password" id="loginPassword" placeholder="Ingresa tu contraseña" required>
+                <button type="submit">Iniciar Sesión</button>
+            </form>
+            <p>¿No tienes cuenta? <a href="#" onclick="openPopup('registerPopup')">Regístrate aquí</a></p>
+        </div>
+    </div>
+    
+    <!-- Pop-up de Registro -->
+    <div id="registerPopup" class="popup-overlay">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup('registerPopup')">&times;</span>
+            <h2>Registro</h2>
+            <form>
+                <label for="registerName">Nombre:</label>
+                <input type="text" id="registerName" placeholder="Ingresa tu nombre" required>
+                <label for="registerEmail">Correo:</label>
+                <input type="email" id="registerEmail" placeholder="Ingresa tu correo" required>
+                <label for="registerPassword">Contraseña:</label>
+                <input type="password" id="registerPassword" placeholder="Crea tu contraseña" required>
+                <label for="registerPhone">Teléfono:</label>
+                <input type="tel" id="registerPhone" placeholder="Ingresa tu teléfono" required>
+                <button type="submit">Registrarse</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="scripts/popup.js"></script>
+    <script src="scripts/carousel.js"></script>
+    <script src="scripts/authLogButton.js"></script>
+</body>
+</html>
